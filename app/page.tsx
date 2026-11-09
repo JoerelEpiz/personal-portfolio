@@ -2,6 +2,7 @@
 import { Hero } from "@/src/components/hero"
 import { Navbar } from "@/src/components/navbar"
 import { About } from "@/src/components/about"
+import { Contact } from "@/src/components/contactus"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <Contact />
 
         <section
           id="home"

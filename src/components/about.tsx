@@ -36,7 +36,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-32">
+    <section id="about" className="relative py-24 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
         {/* Section Heading */}
@@ -57,10 +57,10 @@ export function About() {
         </div>
 
         {/* About Content */}
-        <div className="mt-14 grid gap-6 lg:grid-cols-5">
+        <div className="mt-14 grid gap-6 lg:grid-cols-4">
 
           {/* Main About Card */}
-          <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 sm:p-8 lg:col-span-3">
+          <div className="relative overflow-hidden border-border/70 bg-card p-6 sm:p-8 lg:col-span-2">
 
             <div
               aria-hidden="true"
@@ -111,7 +111,6 @@ export function About() {
             </dl>
           </div>
 
-          {/* Highlight Cards */}
           {/* Highlight Images */}
         <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1 xl:grid-cols-2">
 

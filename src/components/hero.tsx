@@ -24,7 +24,7 @@ export function Hero() {
         </div>
 
         {/* Center Profile Image */}
-        <div className="relative z-10 mx-auto -mt-8 h-[45svh] min-h-75 max-h-120 w-full max-w-130 shrink-0 sm:-mt-12 sm:h-[50svh] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[95%] lg:max-h-none lg:-translate-x-1/2">
+        <div className="relative z-10 mx-auto -mt-8 h-[45svh] min-h-75 max-h-120 w-full max-w-130 shrink-0 sm:-mt-12 sm:h-[50svh]  md:-mt-1 md:h-[55svh] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[95%] lg:max-h-none lg:-translate-x-1/2">
 
           <Image
             src="/images/joepiz.png"

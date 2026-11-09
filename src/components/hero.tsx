@@ -6,31 +6,54 @@ import Image from "next/image"
 export function Hero() {
   return (
     <section
-        id="home"
-        className="relative flex min-h-screen items-center overflow-hidden px-6 py-24 sm:px-10 lg:px-16"
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-transparent px-5 text-foreground sm:px-10 lg:h-screen lg:min-h-190"
     >
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col pb-8 lg:block lg:h-full lg:min-h-190 lg:pb-0">
+
+        {/* Background Name */}
+        <div className="relative z-0 w-full pt-12 text-center sm:pt-16 lg:absolute lg:left-1/2 lg:top-10 lg:-translate-x-1/2 lg:pt-0">
+          <h1 className="font-[family-name:var(--font-satoshi)] whitespace-nowrap text-[clamp(2.2rem,12vw,12rem)] leading-[0.85] tracking-tight">
+            <span className="font-light text-transparent [-webkit-text-stroke:1.5px_var(--foreground)]">
+              JOEREL
+            </span>{" "}
+            <span className="font-black tracking-wider">
+              EPIZ
+            </span>
+          </h1>
+        </div>
+
+        {/* Center Profile Image */}
+        <div className="relative z-10 mx-auto -mt-8 h-[45svh] min-h-75 max-h-120 w-full max-w-130 shrink-0 sm:-mt-12 sm:h-[50svh] lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[95%] lg:max-h-none lg:-translate-x-1/2">
+
+          <Image
+            src="/images/joepiz.png"
+            alt="Joerel Epiz"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 520px"
+            className="object-contain object-bottom -translate-y-3 sm:-translate-y-16 lg:-translate-y-35"
+          />
+
+        </div>
 
         {/* Left: Introduction */}
-        <div className="space-y-8">
+        <div className="relative z-20 mx-auto mt-4 w-full max-w-md space-y-4 sm:mt-6 lg:absolute lg:bottom-16 lg:left-2 lg:mx-0 lg:mt-0 lg:w-[65%] lg:max-w-77.5">
+
           <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-primary" />
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-px w-8 bg-primary" />
+
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary sm:text-xs">
               Welcome to my portfolio
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-              Hi, I&apos;m{" "}
-              <span className="text-primary">Joerel Epiz.</span>
-            </h1>
-
-            <h2 className="text-2xl font-semibold sm:text-3xl">
-              Software Developer
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
+              Police Officer & Software Developer
             </h2>
 
-            <p className="max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
+            <p className="text-xs leading-6 text-muted-foreground sm:text-sm sm:leading-7">
               I build modern, responsive, and user-friendly
               web applications. Passionate about technology,
               problem-solving, and creating solutions that
@@ -39,81 +62,57 @@ export function Hero() {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             <Link
               href="#projects"
-              className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              className="inline-flex h-10 items-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground transition-all hover:opacity-90 sm:h-11 sm:px-5 sm:text-sm"
             >
               View My Work
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-3.5" />
             </Link>
 
             <Link
               href="#contact"
-              className="inline-flex h-12 items-center rounded-lg border px-6 text-sm font-semibold transition-colors hover:bg-accent"
+              className="inline-flex h-10 items-center rounded-full border border-border bg-background/80 px-4 text-xs font-semibold transition-colors hover:bg-accent sm:h-11 sm:px-5 sm:text-sm"
             >
               Contact Me
             </Link>
           </div>
-
-          {/* Social Links */}
-            <div className="flex items-center gap-6 pt-2">
-                <Link
-                    href="https://github.com/JoerelEpiz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    GitHub ↗
-                </Link>
-
-                <Link
-                    href="#"
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    LinkedIn ↗
-                </Link>
-            </div>
         </div>
 
-        
-        {/* Right: Profile Image */}
-        <div className="relative mx-auto w-full max-w-md">
-            {/* Profile Picture */}
-            <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl shadow-xl">
-                <Image
-                src="/images/profile.jpg"
-                alt="Joerel Epiz"
-                fill
-                priority
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 384px"
-                />
-            </div>
+        {/* Social Links */}
+        <div className="relative z-20 mt-8 flex items-center justify-center gap-3 lg:absolute lg:bottom-10 lg:right-2 lg:mt-0 lg:flex-col lg:items-end">
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-5 right-4 rounded-xl border bg-background/95 px-5 py-3 shadow-lg backdrop-blur sm:-right-6">
-                <p className="text-sm font-semibold">
-                Building something
-                </p>
-                <p className="text-xs text-muted-foreground">
-                One line of code at a time.
-                </p>
-            </div>
+          <Link
+            href="https://github.com/JoerelEpiz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-border bg-background/80 px-4 py-2 text-xs font-medium backdrop-blur transition-colors hover:bg-accent"
+          >
+            GitHub ↗
+          </Link>
+
+          <Link
+            href="https://linkedin.com/in/joerleepiz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-border bg-background/80 px-4 py-2 text-xs font-medium backdrop-blur transition-colors hover:bg-accent"
+          >
+            LinkedIn ↗
+          </Link>
+
         </div>
 
-
+        {/* Scroll Indicator - Desktop */}
+        <Link
+          href="#projects"
+          className="absolute bottom-3 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground lg:flex"
+        >
+          Scroll to explore
+          <ArrowDown className="size-4 animate-bounce" />
+        </Link>
 
       </div>
-
-      {/* Scroll Indicator */}
-      <Link
-        href="#projects"
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground md:flex"
-      >
-        Scroll to explore
-        <ArrowDown className="size-4 animate-bounce" />
-      </Link>
     </section>
   )
 }

@@ -91,11 +91,12 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
         <ThemeToggle />
 
-        <Button asChild>
-            <Link href="#contact">
-            Let's Talk
-            </Link>
-        </Button>
+        <Link
+          href="#contact"
+          className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Let&apos;s Talk
+        </Link>
         </div>
 
         {/* Mobile Navigation */}
@@ -168,7 +169,7 @@ export function Navbar() {
                     />
                     }
                 >
-                    Let's Talk
+                    Let&apos;s Talk
                 </SheetClose>
 
                 </div>

@@ -26,10 +26,10 @@ export function Contact() {
                     <div>
                         <p className="text-sm text-muted-foreground">Email</p>
                         <a
-                        href="mailto:your.email@example.com"
+                        href="mailto:joerelzipe@gmail.com"
                         className="font-medium hover:text-violet-600"
                         >
-                        your.email@example.com
+                        Joerelzipe@gmail.com
                         </a>
                     </div>
                     </div>
@@ -39,8 +39,17 @@ export function Contact() {
                         ◎
                     </span>
                     <div>
-                        <p className="text-sm text-muted-foreground">Location</p>
-                        <p className="font-medium">Philippines</p>
+                        <a
+                        href="https://maps.app.goo.gl/4yHNdzUk7iju6WqW6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block"
+                        >
+                            <p className="text-sm text-muted-foreground">Location</p>
+                            <p className="font-medium transition-colors group-hover:text-violet-600">
+                                Purok 3, Brgy. Mahayahay, Maasin City, Southern Leyte, 6600, Philippines
+                        </p>
+                        </a>
                     </div>
                     </div>
                 </div>
@@ -48,7 +57,7 @@ export function Contact() {
 
                 {/* Contact form */}
                 <form
-                action="mailto:your.email@example.com"
+                action="mailto:Joerelzipe@gmail.com"
                 method="post"
                 encType="text/plain"
                 className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm sm:p-8"

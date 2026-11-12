@@ -131,3 +131,45 @@
     @apply font-sans;
   }
 }
+
+
+/* About Journey Timeline */
+
+@keyframes journeyReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes journeyImageReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.journey-enter {
+  animation: journeyReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.journey-image-enter {
+  animation: journeyImageReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-enter,
+  .journey-image-enter {
+    animation: none;
+  }
+}

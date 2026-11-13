@@ -38,7 +38,7 @@ export function Hero() {
         </div>
 
         {/* Left: Introduction */}
-        <div className="relative z-20 mx-auto mt-4 w-full max-w-md space-y-4 sm:mt-6 lg:absolute lg:bottom-16 lg:left-2 lg:mx-0 lg:mt-0 lg:w-[65%] lg:max-w-77.5">
+        <div className="relative z-20 mx-auto mt-4 w-full max-w-md space-y-4 sm:mt-6 lg:absolute lg:bottom-40 lg:left-2 lg:mx-0 lg:mt-0 lg:w-[65%] lg:max-w-77.5">
 
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-primary" />
@@ -81,7 +81,7 @@ export function Hero() {
         </div>
 
         {/* Social Links */}
-        <div className="relative z-20 mt-8 flex items-center justify-center gap-3 lg:absolute lg:bottom-10 lg:right-2 lg:mt-0 lg:flex-col lg:items-end">
+        <div className="relative z-20 mt-8 flex items-center justify-center gap-3 lg:absolute lg:bottom-40 lg:right-2 lg:mt-0 lg:flex-col lg:items-end">
 
           <Link
             href="https://github.com/JoerelEpiz"
@@ -106,7 +106,7 @@ export function Hero() {
         {/* Scroll Indicator - Desktop */}
         <Link
           href="#projects"
-          className="absolute bottom-3 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground lg:flex"
+          className="absolute bottom-15 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground lg:flex"
         >
           Scroll to explore
           <ArrowDown className="size-4 animate-bounce" />

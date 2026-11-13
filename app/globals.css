@@ -173,3 +173,28 @@
     animation: none;
   }
 }
+
+/* Project Marquee */
+@keyframes project-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.project-marquee-track {
+  animation: project-scroll 35s linear infinite;
+}
+
+.project-marquee:hover .project-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-marquee-track {
+    animation: none;
+  }
+}

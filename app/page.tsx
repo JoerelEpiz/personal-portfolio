@@ -4,6 +4,7 @@ import { Navbar } from "@/src/components/navbar"
 import { About } from "@/src/components/about"
 import { Contact } from "@/src/components/contact"
 import { Footer } from "@/src/components/footer"
+import { ProjectMarquee } from "@/src/components/project-marquee"
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <ProjectMarquee />
         <Contact />
         <Footer />
       </div>

@@ -30,10 +30,6 @@ export function About() {
               A story of experience, growth & continuous learning.
             </p>
           </div>
-
-          <span className="hidden shrink-0 text-sm text-muted-foreground sm:block lg:text-xl">
-            ABOUT / 01
-          </span>
         </div>
 
         {/* Divider */}
@@ -136,7 +132,7 @@ export function About() {
           <div className="col-span-12 lg:col-span-6">
             <div
               key={`image-${activeJourney.year}`}
-              className="journey-image-enter relative aspect-4/5 max-h-197.5 w-full overflow-hidden rounded-t-[28px] bg-muted"
+              className="journey-image-enter relative aspect-4/5 max-h-120 w-full overflow-hidden rounded-t-[28px] bg-muted"
             >
               <Image
                 src={activeJourney.image}

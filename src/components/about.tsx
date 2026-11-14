@@ -6,11 +6,15 @@ import Image from "next/image"
 import { journeyData } from "./journey-data"
 
 export function About() {
-  const [activeYear, setActiveYear] = useState("2026")
+  const [activeId, setActiveId] = useState(
+    journeyData[0]?.id ?? ""
+  )
 
   const activeJourney =
-    journeyData.find((item) => item.year === activeYear) ??
+    journeyData.find((item) => item.id === activeId) ??
     journeyData[0]
+
+  if (!activeJourney) return null
 
   return (
     <section
@@ -23,7 +27,7 @@ export function About() {
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl">
-              My journey in motion.
+              My life journey.
             </h2>
 
             <p className="mt-5 text-sm uppercase tracking-wide text-muted-foreground sm:text-lg">
@@ -38,24 +42,24 @@ export function About() {
         {/* Timeline */}
         <div className="mt-10 grid grid-cols-12 gap-5 lg:gap-7">
 
-          {/* Year Navigation: 2 columns */}
+          {/* Year Navigation: Scrollable */}
           <aside className="col-span-2 hidden lg:block">
             <div className="sticky top-28">
               <p className="mb-5 text-sm uppercase tracking-wide text-muted-foreground">
                 Year
               </p>
 
-              <nav className="flex flex-col items-start gap-5">
+              <nav className="flex max-h-[65vh] flex-col items-start gap-5 overflow-y-auto overscroll-contain pr-3 pb-4 scrollbar-thin">
                 {journeyData.map((item) => {
-                  const isActive = activeYear === item.year
+                  const isActive = activeId === item.id
 
                   return (
                     <button
-                      key={item.year}
+                      key={item.id}
                       type="button"
-                      onClick={() => setActiveYear(item.year)}
+                      onClick={() => setActiveId(item.id)}
                       aria-current={isActive ? "true" : undefined}
-                      className={`group flex items-center gap-2 text-xl transition-colors duration-300 ${
+                      className={`group flex shrink-0 items-center gap-2 text-xl transition-colors duration-300 ${
                         isActive
                           ? "font-semibold text-foreground"
                           : "text-muted-foreground hover:text-foreground"
@@ -77,10 +81,11 @@ export function About() {
             </div>
           </aside>
 
-          {/* Story: 4 columns */}
-          <div className="col-span-12 lg:col-span-4">
+
+          {/* Story */}
+          <div className="col-span-12 lg:col-span-5">
             <div
-              key={activeJourney.year}
+              key={activeJourney.id}
               className="journey-enter"
             >
               <p className="mb-5 text-sm uppercase tracking-wide text-muted-foreground">
@@ -95,6 +100,12 @@ export function About() {
                 {activeJourney.title}
               </h4>
 
+              {activeJourney.where && (
+                <p className="mb-5 text-sm uppercase tracking-wide text-muted-foreground">
+                  {activeJourney.where}
+                </p>
+              )}
+
               <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {activeJourney.description}
               </p>
@@ -104,21 +115,21 @@ export function About() {
               </p>
             </div>
 
-            {/* Mobile / Tablet year selector */}
+            {/* Mobile / Tablet Year Selector */}
             <div className="mt-8 flex gap-5 overflow-x-auto border-t border-border/70 pt-5 pb-2 lg:hidden">
               {journeyData.map((item) => {
-                const isActive = activeYear === item.year
+                const isActive = activeId === item.id
 
                 return (
                   <button
-                    key={item.year}
+                    key={item.id}
                     type="button"
-                    onClick={() => setActiveYear(item.year)}
+                    onClick={() => setActiveId(item.id)}
                     aria-current={isActive ? "true" : undefined}
-                    className={`shrink-0 text-base transition-colors ${
+                    className={`shrink-0 text-base transition-colors duration-300 ${
                       isActive
                         ? "font-semibold text-foreground"
-                        : "text-muted-foreground"
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     {item.year}
@@ -128,11 +139,11 @@ export function About() {
             </div>
           </div>
 
-          {/* Photograph: 6 columns */}
-          <div className="col-span-12 lg:col-span-6">
+          {/* Photograph */}
+          <div className="col-span-12 lg:col-span-5">
             <div
-              key={`image-${activeJourney.year}`}
-              className="journey-image-enter relative aspect-4/5 max-h-120 w-full overflow-hidden rounded-t-[28px] bg-muted"
+              key={`image-${activeJourney.id}`}
+              className="journey-image-enter relative aspect-4/5 max-h-180 w-full overflow-hidden rounded-t-[28px] bg-muted"
             >
               <Image
                 src={activeJourney.image}
@@ -145,7 +156,7 @@ export function About() {
             </div>
 
             <p
-              key={`caption-${activeJourney.year}`}
+              key={`caption-${activeJourney.id}`}
               className="journey-enter mt-3 text-sm text-muted-foreground"
             >
               {activeJourney.caption}

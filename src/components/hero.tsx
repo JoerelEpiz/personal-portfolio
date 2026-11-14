@@ -54,10 +54,8 @@ export function Hero() {
             </h2>
 
             <p className="text-xs leading-6 text-muted-foreground sm:text-sm sm:leading-7">
-              I build modern, responsive, and user-friendly
-              web applications. Passionate about technology,
-              problem-solving, and creating solutions that
-              make a difference.
+              Police Officer by Day. Developer by Passion. <br/>
+              By day, I serve as a police officer. By evening, I turn to code — learning new technologies, building projects, and sharpening my skills one line at a time. I believe growth never stops, and every day is another opportunity to become better than yesterday.
             </p>
           </div>
 
@@ -93,7 +91,7 @@ export function Hero() {
           </Link>
 
           <Link
-            href="https://linkedin.com/in/joerleepiz"
+            href="https://www.linkedin.com/in/joerel-epiz-061651102/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-border bg-background/80 px-4 py-2 text-xs font-medium backdrop-blur transition-colors hover:bg-accent"

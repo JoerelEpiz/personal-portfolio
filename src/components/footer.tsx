@@ -7,9 +7,9 @@ import {
 
 import {
   FaInstagram,
-  FaLinkedinIn,
   FaFacebookF,
   FaYoutube,
+  FaTiktok,
 } from "react-icons/fa"
 
 const navigation = [
@@ -20,11 +20,11 @@ const navigation = [
 ]
 
 const socials = [
-  { name: "Instagram", href: "#", icon: FaInstagram },
-  { name: "LinkedIn", href: "#", icon: FaLinkedinIn },
-  { name: "Facebook", href: "#", icon: FaFacebookF },
+  { name: "Instagram", href: "https://www.instagram.com/brunz_mark/", icon: FaInstagram },
+  { name: "Facebook", href: "https://www.facebook.com/Brunz.Mark", icon: FaFacebookF },
   { name: "WhatsApp", href: "#", icon: MessageCircle },
   { name: "YouTube", href: "#", icon: FaYoutube },
+  { name: "TikTok", href: "https://www.tiktok.com/@brunz_mark", icon: FaTiktok },
 ]
 
 export function Footer() {
@@ -42,7 +42,6 @@ export function Footer() {
               className="text-2xl font-bold tracking-tight"
             >
               Joerel Epiz
-              <span className="text-emerald-600 dark:text-emerald-400">.</span>
             </Link>
           </div>
 
@@ -60,7 +59,11 @@ export function Footer() {
           </nav>
 
           {/* Social Links */}
-          <div className="mt-7 flex justify-center gap-3">
+          <p className="mt-7 flex justify-center text-sm text-muted-foreground">
+              Follow me on social media:
+          </p>
+          <div className="mt-2 flex justify-center gap-3">
+            
             {socials.map((social) => {
               const Icon = social.icon
 

@@ -3,8 +3,7 @@
 
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import {useEffect, useState} from "react"
-import {useTheme} from "next-themes"
+import { useTheme } from "next-themes"
 import {Menu, Sun, Moon} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -26,28 +25,12 @@ const navLinks = [
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return (
-      <Button
-        variant="ghost"
-        size="icon"
-        aria-label="Toggle theme"
-        disabled
-      />
-    )
-  }
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      aria-label="Toggle theme"
+      aria-label="Toggle color theme"
       onClick={() =>
         setTheme(theme === "dark" ? "light" : "dark")
       }
@@ -91,7 +74,7 @@ export function Navbar() {
         <ThemeToggle />
 
         <Link
-          href="#contact"
+          href="tel:+639940939130"
           className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Let&apos;s Talk

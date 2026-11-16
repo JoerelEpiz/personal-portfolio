@@ -2,29 +2,13 @@ import Link from "next/link"
 import {
   Mail,
   Phone,
-  MessageCircle,
 } from "lucide-react"
-
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaTiktok,
-} from "react-icons/fa"
 
 const navigation = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
-]
-
-const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/brunz_mark/", icon: FaInstagram },
-  { name: "Facebook", href: "https://www.facebook.com/Brunz.Mark", icon: FaFacebookF },
-  { name: "WhatsApp", href: "#", icon: MessageCircle },
-  { name: "YouTube", href: "#", icon: FaYoutube },
-  { name: "TikTok", href: "https://www.tiktok.com/@brunz_mark", icon: FaTiktok },
 ]
 
 export function Footer() {
@@ -51,36 +35,12 @@ export function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
-
-          {/* Social Links */}
-          <p className="mt-7 flex justify-center text-sm text-muted-foreground">
-              Follow me on social media:
-          </p>
-          <div className="mt-2 flex justify-center gap-3">
-            
-            {socials.map((social) => {
-              const Icon = social.icon
-
-              return (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  aria-label={social.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background text-muted-foreground transition-all hover:-translate-y-1 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400"
-                >
-                  <Icon size={17} />
-                </Link>
-              )
-            })}
-          </div>
 
           {/* Divider */}
           <div className="my-8 border-t border-border/70" />
@@ -96,7 +56,7 @@ export function Footer() {
 
               <a
                 href="mailto:joerelzipe@gmail.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 <Mail size={16} />
                 joerelzipe@gmail.com
@@ -104,7 +64,7 @@ export function Footer() {
 
               <a
                 href="tel:+639940939130"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 <Phone size={16} />
                 Contact Me

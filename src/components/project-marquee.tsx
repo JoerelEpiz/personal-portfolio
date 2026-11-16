@@ -1,69 +1,184 @@
 
-"use client"
+import Image from "next/image"
 
 const projects = [
   {
+    number: "01",
     title: "Personal Portfolio",
-    description: "My personal portfolio website.",
+    description:
+      "A personal digital space showcasing my journey, technical skills, and projects.",
     category: "Web Development",
+    year: "2026",
     image: "/images/projects/portfolio.png",
   },
   {
+    number: "02",
     title: "Crime Monitoring System",
-    description: "Geographic crime monitoring platform.",
+    description:
+      "A geographic incident monitoring platform with interactive maps and data visualization.",
     category: "Full Stack",
+    year: "2026",
     image: "/images/projects/crime-monitoring.png",
   },
   {
-    title: "NFC Business Card",
-    description: "Digital business card platform.",
+    number: "03",
+    title: "TapCard",
+    description:
+      "An NFC-powered digital business card experience for sharing professional information.",
     category: "Web Application",
+    year: "2026",
     image: "/images/projects/tapcard.png",
   },
 ]
 
+function ProjectCard({
+  project,
+}: {
+  project: (typeof projects)[number]
+}) {
+  return (
+    <article className="project-card group relative w-[320px] shrink-0 sm:w-[420px]">
+      {/* Project image */}
+      <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-border/60 bg-muted">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          sizes="(max-width: 640px) 320px, 420px"
+          className="project-card-image object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+
+        {/* Cinematic overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-black/10 opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+        />
+
+        {/* Project number */}
+        <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">
+          PROJECT / {project.number}
+        </span>
+
+        {/* View indicator */}
+        <div className="absolute bottom-5 right-5 flex size-11 translate-y-3 items-center justify-center rounded-full border border-white/30 bg-white/10 text-xl text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          ↗
+        </div>
+      </div>
+
+      {/* Project information */}
+      <div className="flex items-start justify-between gap-4 px-1 pt-5">
+        <div className="min-w-0">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            {project.category}
+          </p>
+
+          <h3 className="text-xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-primary sm:text-2xl">
+            {project.title}
+          </h3>
+
+          <p className="mt-2 max-w-[340px] text-sm leading-relaxed text-muted-foreground">
+            {project.description}
+          </p>
+        </div>
+
+        <span className="pt-1 text-xs tabular-nums text-muted-foreground">
+          {project.year}
+        </span>
+      </div>
+    </article>
+  )
+}
+
 export function ProjectMarquee() {
   return (
-    <section id="projects" className="relative min-h-screen py-16 sm:py-20">
-        <div className="project-marquee w-full overflow-hidden">
-        <div className="project-marquee-track flex w-max">
-            {[0, 1].map((copy) => (
-            <div
-                key={copy}
-                aria-hidden={copy === 1}
-                className="flex shrink-0 gap-6 pr-6"
-            >
-                {projects.map((project, index) => (
-                <article
-                    key={`${copy}-${index}`}
-                    className="w-[300px] shrink-0 overflow-hidden
-                    rounded-2xl border bg-card"
-                >
-                    <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-48 w-full object-cover"
-                    />
+    <section
+      id="projects"
+      className="relative scroll-mt-20 overflow-hidden py-24 sm:py-32"
+    >
+      {/* Ambient background */}
+      <div className="pointer-events-none absolute -left-40 top-1/4 size-[400px] rounded-full bg-primary/[0.06] blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 size-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
 
-                    <div className="p-5">
-                    <p className="text-xs text-muted-foreground">
-                        {project.category}
-                    </p>
+      <div className="relative z-10 mx-auto mb-14 max-w-7xl px-6 sm:px-10">
+        {/* Section header */}
+        <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="size-2 rounded-full bg-primary" />
+              A selection of my work
+            </p>
 
-                    <h3 className="mt-2 text-lg font-semibold">
-                        {project.title}
-                    </h3>
+            <h2 className="text-[clamp(2.75rem,8vw,5.5rem)] font-semibold leading-[0.95] tracking-tighter">
+              Selected
+              <span className="ml-3 text-muted-foreground/50">
+                Works.
+              </span>
+            </h2>
 
-                    <p className="mt-2 text-sm text-muted-foreground">
-                        {project.description}
-                    </p>
-                    </div>
-                </article>
-                ))}
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Ideas transformed into digital experiences.
+              A collection of things I have built, explored,
+              and continue to improve.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-5 border-t border-border pt-5 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
+            <span className="text-5xl font-light tracking-tighter">
+              03
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest">
+                Projects
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                And counting...
+              </p>
             </div>
-            ))}
+          </div>
         </div>
+      </div>
+
+      {/* Infinite marquee */}
+      <div className="project-marquee relative">
+        {/* Edge fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-32" />
+
+        <div className="project-marquee-track flex w-max gap-7 py-3">
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              aria-hidden={copy === 1}
+              className="flex shrink-0 gap-7"
+            >
+              {projects.map((project) => (
+                <ProjectCard
+                  key={`${copy}-${project.number}`}
+                  project={project}
+                />
+              ))}
+            </div>
+          ))}
         </div>
+      </div>
+
+      {/* Bottom information */}
+      <div className="relative z-10 mx-auto mt-12 flex max-w-7xl flex-col justify-between gap-4 px-6 sm:flex-row sm:items-center sm:px-10">
+        <p className="text-xs text-muted-foreground">
+          A continuous journey of building and learning.
+        </p>
+
+        <a
+          href="https://github.com/JoerelEpiz"
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest transition-colors hover:text-primary"
+        >
+          Explore my GitHub
+          <span className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+            ↗
+          </span>
+        </a>
+      </div>
     </section>
   )
 }

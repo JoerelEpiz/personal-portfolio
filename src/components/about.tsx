@@ -3,7 +3,34 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { journeyData } from "./journey-data"
+import { journeyData, type JourneyItem } from "./journey-data"
+
+function JourneyPhoto({ journey }: { journey: JourneyItem }) {
+  const [hasError, setHasError] = useState(false)
+
+  return (
+    <div className="relative aspect-4/5 max-h-150 w-full overflow-hidden rounded-t-[28px] bg-muted">
+      {hasError ? (
+        <div
+          role="img"
+          aria-label={`${journey.year}: photo unavailable`}
+          className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm text-muted-foreground"
+        >
+          Photo unavailable
+        </div>
+      ) : (
+        <Image
+          src={journey.image}
+          alt={journey.imageAlt}
+          fill
+          sizes="(max-width: 1023px) 90vw, 40vw"
+          onError={() => setHasError(true)}
+          className="object-cover"
+        />
+      )}
+    </div>
+  )
+}
 
 export function About() {
   const [activeId, setActiveId] = useState(
@@ -19,17 +46,17 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen py-16 sm:py-20"
+      className="relative min-h-screen scroll-mt-20 py-16 sm:py-20"
     >
       <div className="mx-auto max-w-[1800px] px-6 sm:px-8 lg:px-10">
 
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl">
-              My life journey.
+            <h2 className="text-[clamp(2.75rem,8vw,5.5rem)] font-semibold leading-[0.95] tracking-tighter">
+              My life{" "}
+              <span className="text-muted-foreground/50">journey.</span>
             </h2>
-
             <p className="mt-5 text-sm uppercase tracking-wide text-muted-foreground sm:text-lg">
               A story of experience, growth & continuous learning.
             </p>
@@ -141,18 +168,8 @@ export function About() {
 
           {/* Photograph */}
           <div className="col-span-12 lg:col-span-5">
-            <div
-              key={`image-${activeJourney.id}`}
-              className="journey-image-enter relative aspect-4/5 max-h-150 w-full overflow-hidden rounded-t-[28px] bg-muted"
-            >
-              <Image
-                src={activeJourney.image}
-                alt={activeJourney.imageAlt}
-                fill
-                priority
-                sizes="(max-width: 1023px) 90vw, 40vw"
-                className="object-cover"
-              />
+            <div key={`image-${activeJourney.id}`} className="journey-image-enter">
+              <JourneyPhoto journey={activeJourney} />
             </div>
 
             <p

@@ -207,7 +207,7 @@ export const journeyData: JourneyItem[] = [
   {
     id: "pnp-police-officer",
     year: "2024-PRESENT",
-    title: "Police Officer",
+    title: "Police Officer - Patrolman",
     where: "Philippine National Police",
     description:
       "Joined the Philippine National Police on December 20, 2024. Today, I dedicate myself to public service while continuing to pursue my passion for technology and software development during my free time.",

@@ -143,7 +143,7 @@ export function About() {
           <div className="col-span-12 lg:col-span-5">
             <div
               key={`image-${activeJourney.id}`}
-              className="journey-image-enter relative aspect-4/5 max-h-180 w-full overflow-hidden rounded-t-[28px] bg-muted"
+              className="journey-image-enter relative aspect-4/5 max-h-150 w-full overflow-hidden rounded-t-[28px] bg-muted"
             >
               <Image
                 src={activeJourney.image}

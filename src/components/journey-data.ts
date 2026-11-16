@@ -133,6 +133,18 @@ export const journeyData: JourneyItem[] = [
     caption: "2022–2023 — Strengthening coordination skills.",
   },
   {
+    id: "tesda-smaw",
+    year: "2022-23",
+    title: "TESDA Shielded Metal Arc Welding (SMAW)",
+    where: "Saint Joseph College",
+    description:
+      "Completed vocational trade course training in Shielded Metal Arc Welding (SMAW) at Saint Joseph College, gaining practical knowledge and hands-on skills in metal fabrication, welding techniques, and workplace safety.",
+    category: "VOCATIONAL",
+    image: "/images/about/17.png",
+    imageAlt: "Shielded Metal Arc Welding vocational training",
+    caption: "2022–2023 — Building practical skills through technical education.",
+  },
+  {
     id: "denzel-graphic-artist",
     year: "2023-24",
     title: "Graphic Artist",

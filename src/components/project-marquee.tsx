@@ -1,5 +1,7 @@
 
 import Image from "next/image"
+import Link from "next/link"
+import { ShieldCheck } from "lucide-react"
 
 const projects = [
   {
@@ -29,24 +31,42 @@ const projects = [
     year: "2026",
     image: "/images/projects/tapcard.png",
   },
+  {
+    number: "04",
+    title: "PRO-8 Police Station Directory",
+    description:
+      "A searchable Eastern Visayas police directory with emergency calling and published office contacts.",
+    category: "Public Safety Directory",
+    year: "2026",
+    href: "/projects/pro-8-directory",
+  },
 ]
 
 function ProjectCard({
   project,
+  isDuplicate,
 }: {
   project: (typeof projects)[number]
+  isDuplicate: boolean
 }) {
-  return (
+  const card = (
     <article className="project-card group relative w-[320px] shrink-0 sm:w-[420px]">
       {/* Project image */}
       <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-border/60 bg-muted">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          sizes="(max-width: 640px) 320px, 420px"
-          className="project-card-image object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 640px) 320px, 420px"
+            className="project-card-image object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex size-full flex-col items-center justify-center gap-3 bg-neutral-100 text-neutral-700">
+            <ShieldCheck size={48} strokeWidth={1.4} aria-hidden="true" />
+            <span className="text-xs font-bold tracking-[0.18em]">PRO-8 DIRECTORY</span>
+          </div>
+        )}
 
         {/* Cinematic overlay */}
         <div
@@ -86,6 +106,19 @@ function ProjectCard({
       </div>
     </article>
   )
+
+  if (!project.href) return card
+
+  return (
+    <Link
+      href={project.href}
+      tabIndex={isDuplicate ? -1 : undefined}
+      className="block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+      aria-label={`Open ${project.title}`}
+    >
+      {card}
+    </Link>
+  )
 }
 
 export function ProjectMarquee() {
@@ -123,7 +156,7 @@ export function ProjectMarquee() {
 
           <div className="flex items-center gap-5 border-t border-border pt-5 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
             <span className="text-5xl font-light tracking-tighter">
-              03
+              {String(projects.length).padStart(2, "0")}
             </span>
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest">
@@ -148,12 +181,14 @@ export function ProjectMarquee() {
             <div
               key={copy}
               aria-hidden={copy === 1}
+              inert={copy === 1}
               className="flex shrink-0 gap-7"
             >
               {projects.map((project) => (
                 <ProjectCard
                   key={`${copy}-${project.number}`}
                   project={project}
+                  isDuplicate={copy === 1}
                 />
               ))}
             </div>

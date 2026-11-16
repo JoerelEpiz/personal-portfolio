@@ -202,6 +202,10 @@
   animation-play-state: paused;
 }
 
+.project-marquee:focus-within .project-marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-marquee-track {
     animation: none;

@@ -1,5 +1,6 @@
 "use client"
-
+// Import Next.js optimized image component for the official logos.
+import Image from "next/image"
 import { useMemo, useState } from "react"
 import {
   Building2,
@@ -408,16 +409,44 @@ export function PoliceDirectory() {
           <span aria-hidden="true">←</span>
           Back to portfolio
         </Link>
-        <header className="text-center">
-          <p className="text-xs font-bold tracking-[0.18em] text-neutral-600 sm:text-sm">
-            PHILIPPINE NATIONAL POLICE
-          </p>
-          <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">
-            POLICE REGIONAL OFFICE 8
-          </h1>
-          <p className="mt-2 text-sm text-neutral-600">
-            Eastern Visayas · Police station directory
-          </p>
+        {/* Three-column header keeps both logos balanced around the centered title. */}
+        <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 sm:gap-6">
+
+          {/* PNP official logo — left side. */}
+          <Image
+            src="/images/logos/pnp-logo.png"
+            alt="Philippine National Police logo"
+            width={80}
+            height={80}
+            className="h-12 w-12 object-contain sm:h-20 sm:w-20"
+            priority
+          />
+
+          {/* Existing header text — remains centered. */}
+          <div className="min-w-0 text-center">
+            <p className="text-xs font-bold tracking-[0.18em] text-neutral-600 sm:text-sm">
+              PHILIPPINE NATIONAL POLICE
+            </p>
+
+            <h1 className="mt-2 text-xl font-extrabold tracking-tight sm:text-3xl">
+              POLICE REGIONAL OFFICE 8
+            </h1>
+
+            <p className="mt-2 text-xs text-neutral-600 sm:text-sm">
+              Eastern Visayas · Police station directory
+            </p>
+          </div>
+
+          {/* PRO-8 official logo — right side. */}
+          <Image
+            src="/images/logos/pro8-logo.png"
+            alt="Police Regional Office 8 logo"
+            width={80}
+            height={80}
+            className="h-12 w-12 object-contain sm:h-20 sm:w-20"
+            priority
+          />
+
         </header>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-[minmax(0,1fr)_220px]">

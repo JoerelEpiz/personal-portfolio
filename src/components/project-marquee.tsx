@@ -39,6 +39,7 @@ const projects = [
     category: "Public Safety Directory",
     year: "2026",
     href: "/projects/pro-8-directory",
+    image: "/images/projects/ev-ps-directory.png",
   },
 ]
 

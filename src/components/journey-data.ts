@@ -159,7 +159,7 @@ export const journeyData: JourneyItem[] = [
   {
     id: "professional-training",
     year: "2023",
-    title: "Career Development and Professional Training",
+    title: "Career Service Professional Examination",
     where: "Sto. Cristo Elementary School, Quezon City",
     description:
       "Completed Carter Service Professional training at Sto. Cristo Elementary School, Quezon City, as part of my professional development journey.",
@@ -203,6 +203,32 @@ export const journeyData: JourneyItem[] = [
     image: "/images/about/15.png",
     imageAlt: "Computer proficiency examination",
     caption: "2024 — Testing my technical capabilities.",
+  },
+  {
+    // Public Safety Basic Recruit Course — based on the supplied certificate.
+    id: "pnp-psbrc",
+    year: "2024-25",
+    title: "Public Safety Basic Recruit Course (PSBRC)",
+    where: "Police Regional Training Center 8 (PRTC 8)",
+    description:
+      "Successfully completed the Public Safety Basic Recruit Course (PSBRC), PRTC 8 Batch 2024-01 CLS Alpha to Delta, conducted from December 20, 2024 to June 23, 2025. Recognized with the Excellence Service Award for demonstrating commitment, determination, and excellence throughout the training.",
+    category: "POLICE TRAINING",
+    image: "/images/about/psbrc.png",
+    imageAlt: "PSBRC certificate and Excellence Service Award",
+    caption: "June 2025 — Excellence Service Award, PRTC 8.",
+  },
+  {
+    // Basic Internal Security Operations Course — dates supplied by the user.
+    id: "pnp-bisoc",
+    year: "2026",
+    title: "Basic Internal Security Operations Course (BISOC)",
+    where: "Philippine National Police",
+    description:
+      "Undertook the Basic Internal Security Operations Course (BISOC) from April to July 2026 as part of continuing professional training and development in the Philippine National Police.",
+    category: "POLICE TRAINING",
+    image: "/images/about/bisoc.png",
+    imageAlt: "Basic Internal Security Operations Course training",
+    caption: "April–July 2026 — Basic Internal Security Operations Course.",
   },
   {
     id: "pnp-police-officer",

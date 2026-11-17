@@ -6,24 +6,6 @@ import { ShieldCheck } from "lucide-react"
 const projects = [
   {
     number: "01",
-    title: "Personal Portfolio",
-    description:
-      "A personal digital space showcasing my journey, technical skills, and projects.",
-    category: "Web Development",
-    year: "2026",
-    image: "/images/projects/portfolio.png",
-  },
-  {
-    number: "02",
-    title: "Crime Monitoring System",
-    description:
-      "A geographic incident monitoring platform with interactive maps and data visualization.",
-    category: "Full Stack",
-    year: "2026",
-    image: "/images/projects/crime-monitoring.png",
-  },
-  {
-    number: "03",
     title: "TapCard",
     description:
       "An NFC-powered digital business card experience for sharing professional information.",
@@ -32,7 +14,7 @@ const projects = [
     image: "/images/projects/tapcard.png",
   },
   {
-    number: "04",
+    number: "02",
     title: "PRO-8 Police Station Directory",
     description:
       "A searchable Eastern Visayas police directory with emergency calling and published office contacts.",

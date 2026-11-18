@@ -6,15 +6,6 @@ import { ShieldCheck } from "lucide-react"
 const projects = [
   {
     number: "01",
-    title: "TapCard",
-    description:
-      "An NFC-powered digital business card experience for sharing professional information.",
-    category: "Web Application",
-    year: "2026",
-    image: "/images/projects/tapcard.png",
-  },
-  {
-    number: "02",
     title: "PRO-8 Police Station Directory",
     description:
       "A searchable Eastern Visayas police directory with emergency calling and published office contacts.",
@@ -22,6 +13,16 @@ const projects = [
     year: "2026",
     href: "/projects/pro-8-directory",
     image: "/images/projects/ev-ps-directory.png",
+  },
+  {
+    number: "02",
+    title: "PDS Generator",
+    description:
+      "A web application for generating and managing personal data sheets.",
+    category: "Web Application",
+    year: "2026",
+    href: "/projects/pds-generator",
+    image: "/images/projects/pds-generator.png",
   },
 ]
 

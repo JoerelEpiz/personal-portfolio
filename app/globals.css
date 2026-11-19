@@ -231,3 +231,28 @@
   background: var(--muted-foreground);
   border-radius: 999px;
 }
+
+
+@media print {
+  /* Prevent fields from appearing black when saving as PDF */
+  textarea,
+  input,
+  select {
+    background-color: white !important;
+    color: black !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep the form backgrounds from turning dark */
+  .bg-gray-200,
+  .bg-white {
+    background-color: white !important;
+  }
+
+  /* Remove shadows when printing */
+  * {
+    box-shadow: none !important;
+  }
+}
